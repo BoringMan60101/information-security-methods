@@ -1,0 +1,28 @@
+This utility is a reconstruction of symmetric block method
+called GOST-28147-89.
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiet47o8JuDAxVBDhAIHcVlACAQFnoECBYQAQ&url=https%3A%2F%2Fru.wikipedia.org%2Fwiki%2F%25D0%2593%25D0%259E%25D0%25A1%25D0%25A2_28147-89&usg=AOvVaw08EGQVqYPKvD0e7exyzXNS&opi=89978449
+
+
+
+
+
+To compile the whole project use only one simple command:
+g++ -Wall main.cpp -o gostUtility
+
+Note that the utility 'expects' text data:
+1) With encryption mode (e) for it's 'stdin' stream
+2) With dencryption mode (d) it throws data to it's 'stdout' stream
+
+
+
+
+
+Examples of usage:
+
+echo 'Some text' | ./gostUtility e > encryptedText
+cat encryptedText | ./gostUtility d > dectyptedText
+cat decryptedText
+
+OR
+
+echo 'Another text' | gostUtility e | gostUtility d
